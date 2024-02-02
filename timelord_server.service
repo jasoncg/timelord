@@ -1,0 +1,16 @@
+[Unit]
+Description=Timelord Server
+After=network.target
+
+[Service]
+Type=simple
+User=postfix
+WorkingDirectory=/opt/timelord
+ExecStart=/usr/bin/python3 /opt/timelord/standalone/main.py
+
+EnvironmentFile=/etc/timelord.env
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  mymail:
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    ports:
+      - "25:25"
+      - "8080:8080"
+    restart: always
+    env_file:
+      - timelord.env
+    volumes:
+      - type: bind
+        source: ../database/
+        target: /app/database/
+      - type: bind
+        source: ../certs/
+        target: /app/certs/
+

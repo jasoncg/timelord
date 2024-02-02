@@ -1,0 +1,9 @@
+*.env
+*__pycache__*
+output/*
+*.zip
+*pem
+*.db*
+.pytest_cache
+*.tar
+build/
